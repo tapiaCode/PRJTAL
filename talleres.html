@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubrir Talleres en Comarapa - TallerApp</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <i class="fas fa-wrench"></i> TallerApp <span class="brand-location">Comarapa</span>
+            </a>
+            <nav class="navbar-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="talleres.html" class="active">Descubrir Talleres</a></li>
+                    <li><a href="contacto.html">Contacto / Registrar Taller</a></li>
+                </ul>
+            </nav>
+            <button class="navbar-toggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <main>
+        <section class="search-bar-section">
+            <div class="container">
+                <form class="search-form">
+                    <input type="text" placeholder="¿Qué estás buscando? (Ej: 'frenos', 'Don Carlos'...)">
+                    <select name="categoria">
+                        <option value="">Todas las categorías</option>
+                        <option value="mecanica">Mecánica General</option>
+                        <option value="chaperia">Chapería y Pintura</option>
+                        <option value="motos">Motos</option>
+                        <option value="electricidad">Electricidad</option>
+                        <option value="vulcanizadora">Vulcanizadora</option>
+                        <option value="torno">Torno / Maestranza</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i> Buscar</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="lista-talleres" class="discover-section" style="padding-top: 2rem;">
+            <div class="container">
+                <h2 class="section-title">Todos los Talleres</h2>
+
+                <div class="taller-grid">
+                    <article class="taller-card">
+                        <div class="card-icon"><i class="fas fa-car-crash"></i></div>
+                        <h3 class="card-title">Taller de Chapería "El Artista"</h3>
+                        <p class="card-description">Especialistas en enderezado y pintura de alta calidad.</p>
+                        <p class="card-address"><i class="fas fa-map-marker-alt"></i> Av. Barrientos, a una cuadra de la
+                            plaza.</p>
+                        <a href="detalle-taller.html" class="btn btn-secondary">Ver Detalles</a>
+                    </article>
+
+                    <article class="taller-card">
+                        <div class="card-icon"><i class="fas fa-cogs"></i></div>
+                        <h3 class="card-title">Mecánica General "Don Carlos"</h3>
+                        <p class="card-description">Reparación de motores, cajas, frenos y mantenimiento.</p>
+                        <p class="card-address"><i class="fas fa-map-marker-alt"></i> Calle Sucre, esq. Bolívar.</p>
+                        <a href="detalle-taller.html" class="btn btn-secondary">Ver Detalles</a>
+                    </article>
+
+                    <article class="taller-card">
+                        <div class="card-icon"><i class="fas fa-motorcycle"></i></div>
+                        <h3 class="card-title">Taller de Motos "MotoSpeed"</h3>
+                        <p class="card-description">Servicio técnico para todo tipo de motocicletas.</p>
+                        <p class="card-address"><i class="fas fa-map-marker-alt"></i> Zona El Carmen, frente al
+                            surtidor.</p>
+                        <a href="detalle-taller.html" class="btn btn-secondary">Ver Detalles</a>
+                    </article>
+
+                    <article class="taller-card">
+                        <div class="card-icon"><i class="fas fa-bolt"></i></div>
+                        <h3 class="card-title">Electro-Mecánica "Gutiérrez"</h3>
+                        <p class="card-description">Expertos en sistema eléctrico, luces y alternadores.</p>
+                        <p class="card-address"><i class="fas fa-map-marker-alt"></i> Calle Warnes, (zona Mercado).</p>
+                        <a href="detalle-taller.html" class="btn btn-secondary">Ver Detalles</a>
+                    </article>
+
+                    <article class="taller-card">
+                        <div class="card-icon"><i class="fas fa-dot-circle"></i></div>
+                        <h3 class="card-title">Vulcanizadora "El Cruce"</h3>
+                        <p class="card-description">Reparación y parchado de llantas al instante.</p>
+                        <p class="card-address"><i class="fas fa-map-marker-alt"></i> Salida a Santa Cruz, (El Cruce).
+                        </p>
+                        <a href="detalle-taller.html" class="btn btn-secondary">Ver Detalles</a>
+                    </article>
+
+                    <article class="taller-card">
+                        <div class="card-icon"><i class="fas fa-truck-monster"></i></div>
+                        <h3 class="card-title">Taller "El Torno" (Maestranza)</h3>
+                        <p class="card-description">Soldadura especializada y rectificación de motores.</p>
+                        <p class="card-address"><i class="fas fa-map-marker-alt"></i> Barrio Lindo, Av. Circunvalación.
+                        </p>
+                        <a href="detalle-taller.html" class="btn btn-secondary">Ver Detalles</a>
+                    </article>
+
+                    <article class="taller-card">
+                        <div class="card-icon"><i class="fas fa-oil-can"></i></div>
+                        <h3 class="card-title">Lubricentro "Comarapa"</h3>
+                        <p class="card-description">Cambio de aceite, filtros y mantenimiento preventivo.</p>
+                        <p class="card-address"><i class="fas fa-map-marker-alt"></i> Av. Che Guevara, diagonal a la
+                            tranca.</p>
+                        <a href="detalle-taller.html" class="btn btn-secondary">Ver Detalles</a>
+                    </article>
+
+                    <article class="taller-card">
+                        <div class="card-icon"><i class="fas fa-car-battery"></i></div>
+                        <h3 class="card-title">Baterías "Energit"</h3>
+                        <p class="card-description">Venta, revisión y carga de baterías para todo vehículo.</p>
+                        <p class="card-address"><i class="fas fa-map-marker-alt"></i> Calle Florida, lado Banco Unión.
+                        </p>
+                        <a href="detalle-taller.html" class="btn btn-secondary">Ver Detalles</a>
+                    </article>
+                </div>
+
+                <nav class="pagination">
+                    <a href="#" class="page-link disabled">&laquo; Anterior</a>
+                    <a href="#" class="page-link active">1</a>
+                    <a href="#" class="page-link">2</a>
+                    <a href="#" class="page-link">Siguiente &raquo;</a>
+                </nav>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container" id="contacto">
+            <p>&copy; 2025 TallerApp Comarapa. Creado para ayudar a nuestra comunidad.</p>
+            <p>Comarapa, Santa Cruz, Bolivia.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mecánica General "Don Carlos" - TallerApp</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <i class="fas fa-wrench"></i> TallerApp <span class="brand-location">Comarapa</span>
+            </a>
+            <nav class="navbar-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="talleres.html" class="active">Descubrir Talleres</a></li>
+                    <li><a href="contacto.html">Contacto / Registrar Taller</a></li>
+                </ul>
+            </nav>
+            <button class="navbar-toggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <main>
+        <section class="taller-detail-header">
+            <div class="container">
+                <h1 class="taller-title">Mecánica General "Don Carlos"</h1>
+                <p class="taller-category"><i class="fas fa-cogs"></i> Mecánica General</p>
+            </div>
+        </section>
+
+        <section class="taller-detail-content">
+            <div class="container">
+                <div class="detail-layout">
+
+                    <div class="detail-main">
+                        <h2>Acerca de este Taller</h2>
+                        <p>Con más de 20 años de experiencia en Comarapa, "Don Carlos" es su mecánico de confianza para
+                            todo tipo de reparaciones. Nos especializamos en motores, cajas y mantenimiento preventivo
+                            para asegurar que su vehículo siempre esté en las mejores condiciones.</p>
+
+                        <h3>Servicios Principales</h3>
+                        <ul class="services-list">
+                            <li><i class="fas fa-check-circle"></i> Reparación de Motores (Gasolina y Diésel)</li>
+                            <li><i class="fas fa-check-circle"></i> Mantenimiento de Frenos y Suspensión</li>
+                            <li><i class="fas fa-check-circle"></i> Reparación de Cajas de Cambio (Mecánicas)</li>
+                            <li><i class="fas fa-check-circle"></i> Afinamiento de motor y diagnóstico</li>
+                            <li><i class="fas fa-check-circle"></i> Mantenimiento General (Cambio de aceite, filtros)
+                            </li>
+                        </ul>
+
+                        <h3>Galería de Fotos</h3>
+                        <div class="gallery-grid">
+                            <img src="https://images.unsplash.com/photo-1553531889-e6cf4d0c430e?q=80&w=400"
+                                alt="Foto del taller 1">
+                            <img src="https://images.unsplash.com/photo-1621939023002-8c0c8b357f87?q=80&w=400"
+                                alt="Foto del taller 2">
+                            <img src="https://images.unsplash.com/photo-1581453900390-e0058b0933c0?q=80&w=400"
+                                alt="Foto del taller 3">
+                        </div>
+                    </div>
+
+                    <aside class="detail-sidebar">
+                        <div class="sidebar-widget">
+                            <h3>Contacto Rápido</h3>
+                            <p><i class="fas fa-map-marker-alt"></i> Calle Sucre, esq. Bolívar.</p>
+                            <p><i class="fas fa-phone"></i> <a href="tel:+59172234567">72234567</a></p>
+                            <a href="https://wa.me/59172234567" class="btn btn-primary" target="_blank"
+                                style="width: 100%; text-align: center;">
+                                <i class="fab fa-whatsapp"></i> Enviar WhatsApp
+                            </a>
+                        </div>
+
+                        <div class="sidebar-widget">
+                            <h3>Ubicación en el Mapa</h3>
+                            <div class="map-placeholder">
+                                <p>(Aquí iría un mapa de Google Maps)</p>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container" id="contacto">
+            <p>&copy; 2025 TallerApp Comarapa. Creado para ayudar a nuestra comunidad.</p>
+            <p>Comarapa, Santa Cruz, Bolivia.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
