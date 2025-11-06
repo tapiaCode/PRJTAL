@@ -1,162 +1,1049 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talleres de Comarapa | Mecánicos Locales</title>
 
-    <title>TallerApp Comarapa - Encuentra Talleres de Reparación</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="stylesheet" href="style.css">
+    <!-- Configuración de colores personalizados de Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'azul-principal': '#1E3A8A', // Un azul oscuro y confiable
+                        'rojo-vibrante': '#DC2626', // Un rojo enérgico para acentos
+                        'gris-metalico': '#6B7280', // Un gris medio
+                        'gris-oscuro': '#1F2937',   // Para fondos oscuros (footer/nav)
+                    }
+                }
+            }
+        }
+    </script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Estilos CSS personalizados -->
+    <style>
+        /* Estilo para el enlace activo en la navegación */
+        .nav-link.active {
+            color: white;
+            background-color: #DC2626;
+            /* rojo-vibrante */
+        }
+
+        /* Ocultar secciones por defecto (controlado por JS) */
+        main>section:not(#page-inicio) {
+            display: none;
+        }
+
+        /* Estilo para el banner principal */
+        .banner-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1600x800/6B7280/FFFFFF?text=Taller+Mec%C3%A1nico+en+Comarapa');
+        }
+    </style>
 </head>
 
-<body>
+<body class="bg-gray-100 font-sans antialiased">
 
-    <header class="navbar">
-        <div class="container">
-            <a href="index.html" class="navbar-brand">
-                <i class="fas fa-wrench"></i> TallerApp <span class="brand-location">Comarapa</span>
+    <!-- =========== NAVEGACIÓN PRINCIPAL =========== -->
+    <header class="bg-gris-oscuro text-gray-300 shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logo / Título -->
+            <a href="#" class="text-2xl font-bold text-white" data-page="inicio">
+                Talleres <span class="text-rojo-vibrante">Comarapa</span>
             </a>
-            <nav class="navbar-nav">
-                <ul>
-                    <li><a href="index.html" class="active">Inicio</a></li>
-                    <li><a href="talleres.html">Descubrir Talleres</a></li>
-                    <li><a href="contacto.html">Contacto / Registrar Taller</a></li>
-                </ul>
-            </nav>
-            <button class="navbar-toggle"><i class="fas fa-bars"></i></button>
+
+            <!-- Menú de Escritorio -->
+            <div class="hidden md:flex space-x-2">
+                <a href="#"
+                    class="nav-link active px-3 py-2 rounded-md font-medium hover:bg-rojo-vibrante hover:text-white transition-colors"
+                    data-page="inicio">Inicio</a>
+                <a href="#"
+                    class="nav-link px-3 py-2 rounded-md font-medium hover:bg-rojo-vibrante hover:text-white transition-colors"
+                    data-page="descubrir">Descubrir Talleres</a>
+                <a href="#"
+                    class="nav-link px-3 py-2 rounded-md font-medium hover:bg-rojo-vibrante hover:text-white transition-colors"
+                    data-page="servicios">Servicios</a>
+                <a href="#"
+                    class="nav-link px-3 py-2 rounded-md font-medium hover:bg-rojo-vibrante hover:text-white transition-colors"
+                    data-page="comentarios">Opiniones</a>
+                <a href="#"
+                    class="nav-link px-3 py-2 rounded-md font-medium hover:bg-rojo-vibrante hover:text-white transition-colors"
+                    data-page="sobre-nosotros">Sobre Nosotros</a>
+                <a href="#"
+                    class="nav-link px-3 py-2 rounded-md font-medium hover:bg-rojo-vibrante hover:text-white transition-colors"
+                    data-page="contactanos">Contáctanos</a>
+            </div>
+
+            <!-- Botón de Menú Móvil -->
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Menú Móvil (Oculto por defecto) -->
+        <div id="menu-mobile" class="hidden md:hidden bg-gris-oscuro">
+            <a href="#"
+                class="nav-link-mobile block px-4 py-3 text-gray-300 hover:bg-rojo-vibrante hover:text-white transition-colors"
+                data-page="inicio">Inicio</a>
+            <a href="#"
+                class="nav-link-mobile block px-4 py-3 text-gray-300 hover:bg-rojo-vibrante hover:text-white transition-colors"
+                data-page="descubrir">Descubrir Talleres</a>
+            <a href="#"
+                class="nav-link-mobile block px-4 py-3 text-gray-300 hover:bg-rojo-vibrante hover:text-white transition-colors"
+                data-page="servicios">Servicios</a>
+            <a href="#"
+                class="nav-link-mobile block px-4 py-3 text-gray-300 hover:bg-rojo-vibrante hover:text-white transition-colors"
+                data-page="comentarios">Opiniones</a>
+            <a href="#"
+                class="nav-link-mobile block px-4 py-3 text-gray-300 hover:bg-rojo-vibrante hover:text-white transition-colors"
+                data-page="sobre-nosotros">Sobre Nosotros</a>
+            <a href="#"
+                class="nav-link-mobile block px-4 py-3 text-gray-300 hover:bg-rojo-vibrante hover:text-white transition-colors"
+                data-page="contactanos">Contáctanos</a>
         </div>
     </header>
 
+    <!-- =========== CONTENIDO PRINCIPAL (PÁGINAS) =========== -->
     <main>
 
-        <section id="hero" class="hero-section">
-            <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title">¿Problemas con tu vehículo?</h1>
-                    <p class="hero-subtitle">Encuentra los mejores talleres de mecánica, chapería y más en **Comarapa**.
-                        Rápido y confiable.</p>
-                    <a href="#descubrir" class="btn btn-primary">¡Encontrar un Taller Ahora!</a>
+        <!-- =========== PÁGINA: INICIO =========== -->
+        <section id="page-inicio">
+            <!-- Banner Principal -->
+            <div
+                class="banner-bg h-[60vh] md:h-[70vh] bg-cover bg-center flex items-center justify-center text-center text-white">
+                <div class="max-w-3xl px-4">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
+                        <span class="text-rojo-vibrante">🧰</span> Encuentra los mejores talleres de <span
+                            class="underline decoration-rojo-vibrante">Comarapa</span>
+                    </h1>
+                    <p class="text-lg md:text-2xl mb-8 font-light drop-shadow-md">
+                        Talleres locales que mantienen en marcha tus autos y motos.
+                    </p>
+                    <a href="#"
+                        class="bg-rojo-vibrante text-white text-lg font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-red-700 transition-transform hover:scale-105"
+                        data-page="descubrir">
+                        Descubre talleres cercanos
+                    </a>
+                </div>
+            </div>
+
+            <!-- Talleres Destacados -->
+            <div class="py-16 bg-white">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Talleres Destacados</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                        <!-- Taller 1 -->
+                        <div
+                            class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105">
+                            <img src="https://placehold.co/600x400/1E3A8A/FFFFFF?text=Taller+P%C3%A9rez"
+                                alt="[Imagen del Taller Pérez]" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <span
+                                    class="inline-block bg-azul-principal text-white text-xs px-3 py-1 rounded-full uppercase font-semibold">Autos
+                                    y Motos</span>
+                                <h3 class="text-2xl font-bold text-gray-900 my-2">Taller Pérez</h3>
+                                <p class="text-gris-metalico text-sm mb-3">Av. Barrientos, esq. Warnes</p>
+                                <p class="text-gray-700 text-sm mb-4">Especialistas en mecánica general y diagnóstico
+                                    computarizado. 15 años de experiencia.</p>
+                                <p class="text-gray-900 font-semibold mb-4">📞 +591 712 34 567</p>
+                                <a href="#" class="text-rojo-vibrante font-semibold hover:underline"
+                                    data-page="taller-detalle">Ver detalles →</a>
+                            </div>
+                        </div>
+
+                        <!-- Taller 2 -->
+                        <div
+                            class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105">
+                            <img src="https://placehold.co/600x400/DC2626/FFFFFF?text=Motos+El+Valle"
+                                alt="[Imagen de Motos El Valle]" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <span
+                                    class="inline-block bg-rojo-vibrante text-white text-xs px-3 py-1 rounded-full uppercase font-semibold">Solo
+                                    Motos</span>
+                                <h3 class="text-2xl font-bold text-gray-900 my-2">Motos El Valle</h3>
+                                <p class="text-gris-metalico text-sm mb-3">C. Sucre, a media cuadra de la plaza</p>
+                                <p class="text-gray-700 text-sm mb-4">Reparación y mantenimiento de todo tipo de
+                                    motocicletas. Servicio rápido y garantizado.</p>
+                                <p class="text-gray-900 font-semibold mb-4">📞 +591 700 12 345</p>
+                                <a href="#" class="text-rojo-vibrante font-semibold hover:underline"
+                                    data-page="taller-detalle">Ver detalles →</a>
+                            </div>
+                        </div>
+
+                        <!-- Taller 3 -->
+                        <div
+                            class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 transform transition-transform hover:scale-105">
+                            <img src="https://placehold.co/600x400/6B7280/FFFFFF?text=Lubricentro+Comarapa"
+                                alt="[Imagen de Lubricentro Comarapa]" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <span
+                                    class="inline-block bg-gris-metalico text-white text-xs px-3 py-1 rounded-full uppercase font-semibold">Solo
+                                    Autos</span>
+                                <h3 class="text-2xl font-bold text-gray-900 my-2">Lubricentro Comarapa</h3>
+                                <p class="text-gris-metalico text-sm mb-3">Carretera Antigua, Lado Surtidor</p>
+                                <p class="text-gray-700 text-sm mb-4">Cambio de aceite, filtros y mantenimiento
+                                    preventivo. Las mejores marcas.</p>
+                                <p class="text-gray-900 font-semibold mb-4">📞 +591 690 98 765</p>
+                                <a href="#" class="text-rojo-vibrante font-semibold hover:underline"
+                                    data-page="taller-detalle">Ver detalles →</a>
+                            </div>
+                        </div>
+                        <!-- ... (Se pueden agregar 3 talleres más) ... -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mapa Interactivo -->
+            <div class="py-16 bg-gray-100">
+                <div class="container mx-auto px-4 text-center">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-8">Nuestra Cobertura en Comarapa</h2>
+                    <p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+                        Todos los talleres listados se encuentran dentro del municipio de Comarapa. Utiliza el mapa para
+                        explorar las ubicaciones.
+                    </p>
+                    <div class="w-full h-96 rounded-lg shadow-xl overflow-hidden border-4 border-white">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15254.67021666249!2d-64.54283182877196!3d-17.91845648834951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93e7b17208579537%3A0x2897c99f925c404!2sComarapa!5e0!3m2!1ses!2sbo!4v1700000000000"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Por qué elegir local -->
+            <div class="py-16 bg-white">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">¿Por qué elegir talleres locales?
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+                        <div class="p-6">
+                            <div
+                                class="flex items-center justify-center h-16 w-16 bg-azul-principal text-white rounded-full mx-auto mb-4">
+                                <!-- Icono: Confianza -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Confianza y Cercanía</h3>
+                            <p class="text-gray-700">Trato directo con mecánicos que conoces y en quienes puedes
+                                confiar.</p>
+                        </div>
+                        <div class="p-6">
+                            <div
+                                class="flex items-center justify-center h-16 w-16 bg-rojo-vibrante text-white rounded-full mx-auto mb-4">
+                                <!-- Icono: Economía -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Fortalece la Economía Local</h3>
+                            <p class="text-gray-700">Tu inversión se queda en Comarapa, ayudando a negocios y familias
+                                de la zona.</p>
+                        </div>
+                        <div class="p-6">
+                            <div
+                                class="flex items-center justify-center h-16 w-16 bg-gris-metalico text-white rounded-full mx-auto mb-4">
+                                <!-- Icono: Rapidez -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Servicio Rápido</h3>
+                            <p class="text-gray-700">Al estar cerca, los diagnósticos y reparaciones suelen ser más
+                                ágiles y eficientes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reseñas destacadas -->
+            <div class="py-16 bg-azul-principal text-white">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-3xl font-bold text-center mb-12">Lo que dicen nuestros clientes</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white text-gray-800 p-6 rounded-lg shadow-xl">
+                            <div class="flex items-center mb-4">
+                                <div class="text-yellow-400 text-2xl">★★★★☆</div>
+                                <span class="ml-auto font-semibold">Juan C. (Sobre Taller Pérez)</span>
+                            </div>
+                            <p class="italic">"Excelente atención. Me solucionaron un problema eléctrico que en otros
+                                lados no pudieron. Muy recomendados."</p>
+                        </div>
+                        <div class="bg-white text-gray-800 p-6 rounded-lg shadow-xl">
+                            <div class="flex items-center mb-4">
+                                <div class="text-yellow-400 text-2xl">★★★★★</div>
+                                <span class="ml-auto font-semibold">María A. (Sobre Motos El Valle)</span>
+                            </div>
+                            <p class="italic">"Llevé mi moto para mantenimiento y quedé feliz. Fueron rápidos, honestos
+                                y a buen precio. Ahora solo la llevo ahí."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- =========== PÁGINA: DESCUBRIR TALLERES =========== -->
+        <section id="page-descubrir" class="py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8">Descubre Todos los Talleres</h2>
+
+                <!-- Filtros -->
+                <div class="bg-white p-6 rounded-lg shadow-md mb-10">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <div>
+                            <label for="filtro-tipo" class="block text-sm font-medium text-gray-700">Tipo de
+                                Vehículo</label>
+                            <select id="filtro-tipo"
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-azul-principal focus:ring-azul-principal">
+                                <option>Todos</option>
+                                <option>Autos</option>
+                                <option>Motos</option>
+                                <option>Ambos</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="filtro-servicio" class="block text-sm font-medium text-gray-700">Servicio
+                                Ofrecido</label>
+                            <select id="filtro-servicio"
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-azul-principal focus:ring-azul-principal">
+                                <option>Cualquiera</option>
+                                <option>Mecánica General</option>
+                                <option>Diagnóstico</option>
+                                <option>Pintura</option>
+                                <option>Frenos</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="filtro-ubicacion" class="block text-sm font-medium text-gray-700">Ubicación
+                                (Zona)</label>
+                            <input type="text" id="filtro-ubicacion" placeholder="Ej: Zona Central"
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-azul-principal focus:ring-azul-principal">
+                        </div>
+                        <div class="flex items-end">
+                            <button
+                                class="w-full bg-rojo-vibrante text-white px-4 py-2 rounded-lg font-semibold shadow hover:bg-red-700 transition-colors">Filtrar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rejilla de Talleres -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Taller 1 (Repetido de ejemplo) -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                        <img src="https://placehold.co/600x400/1E3A8A/FFFFFF?text=Taller+P%C3%A9rez"
+                            alt="[Imagen del Taller Pérez]" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span
+                                class="inline-block bg-azul-principal text-white text-xs px-3 py-1 rounded-full uppercase font-semibold">Autos
+                                y Motos</span>
+                            <h3 class="text-2xl font-bold text-gray-900 my-2">Taller Pérez</h3>
+                            <p class="text-gris-metalico text-sm mb-3">Av. Barrientos, esq. Warnes</p>
+                            <p class="text-gray-900 font-semibold mb-4">📞 +591 712 34 567</p>
+                            <a href="#"
+                                class="bg-azul-principal text-white text-sm font-semibold px-5 py-2 rounded-lg shadow hover:bg-blue-800 transition-colors w-full text-center block"
+                                data-page="taller-detalle">
+                                Ver Detalles
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Taller 2 (Repetido de ejemplo) -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                        <img src="https://placehold.co/600x400/DC2626/FFFFFF?text=Motos+El+Valle"
+                            alt="[Imagen de Motos El Valle]" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span
+                                class="inline-block bg-rojo-vibrante text-white text-xs px-3 py-1 rounded-full uppercase font-semibold">Solo
+                                Motos</span>
+                            <h3 class="text-2xl font-bold text-gray-900 my-2">Motos El Valle</h3>
+                            <p class="text-gris-metalico text-sm mb-3">C. Sucre, a media cuadra de la plaza</p>
+                            <p class="text-gray-900 font-semibold mb-4">📞 +591 700 12 345</p>
+                            <a href="#"
+                                class="bg-azul-principal text-white text-sm font-semibold px-5 py-2 rounded-lg shadow hover:bg-blue-800 transition-colors w-full text-center block"
+                                data-page="taller-detalle">
+                                Ver Detalles
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Taller 3 (Repetido de ejemplo) -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                        <img src="https://placehold.co/600x400/6B7280/FFFFFF?text=Lubricentro+Comarapa"
+                            alt="[Imagen de Lubricentro Comarapa]" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span
+                                class="inline-block bg-gris-metalico text-white text-xs px-3 py-1 rounded-full uppercase font-semibold">Solo
+                                Autos</span>
+                            <h3 class="text-2xl font-bold text-gray-900 my-2">Lubricentro Comarapa</h3>
+                            <p class="text-gris-metalico text-sm mb-3">Carretera Antigua, Lado Surtidor</p>
+                            <p class="text-gray-900 font-semibold mb-4">📞 +591 690 98 765</p>
+                            <a href="#"
+                                class="bg-azul-principal text-white text-sm font-semibold px-5 py-2 rounded-lg shadow hover:bg-blue-800 transition-colors w-full text-center block"
+                                data-page="taller-detalle">
+                                Ver Detalles
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Taller 4 (Nuevo) -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                        <img src="https://placehold.co/600x400/1F2937/FFFFFF?text=Chaper%C3%ADo+Auto+Color"
+                            alt="[Imagen de Chaperío Auto Color]" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span
+                                class="inline-block bg-gris-oscuro text-white text-xs px-3 py-1 rounded-full uppercase font-semibold">Autos</span>
+                            <h3 class="text-2xl font-bold text-gray-900 my-2">Chaperío Auto Color</h3>
+                            <p class="text-gris-metalico text-sm mb-3">B. Lindo, C. Florida</p>
+                            <p class="text-gray-900 font-semibold mb-4">📞 +591 765 43 210</p>
+                            <a href="#"
+                                class="bg-azul-principal text-white text-sm font-semibold px-5 py-2 rounded-lg shadow hover:bg-blue-800 transition-colors w-full text-center block"
+                                data-page="taller-detalle">
+                                Ver Detalles
+                            </a>
+                        </div>
+                    </div>
+                    <!-- ... Más talleres ... -->
                 </div>
             </div>
         </section>
 
-        <section id="descubrir" class="discover-section">
-            <div class="container">
-                <h2 class="section-title">Talleres Destacados en Comarapa</h2>
+        <!-- =========== PÁGINA: DETALLE DEL TALLER (PLANTILLA) =========== -->
+        <!-- Esta sección se usa como plantilla para todos los talleres. -->
+        <section id="page-taller-detalle" class="py-16">
+            <div class="container mx-auto px-4">
 
-                <div class="taller-grid">
+                <!-- Encabezado del Taller -->
+                <div class="bg-white rounded-lg shadow-xl p-8 mb-8">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between">
+                        <div>
+                            <h2 class="text-4xl font-bold text-azul-principal">Taller Pérez (Ejemplo)</h2>
+                            <p class="text-lg text-gris-metalico mt-2">Av. Barrientos, esq. Warnes, Zona Central</p>
+                            <p class="text-gray-700 mt-4 max-w-lg">
+                                Con más de 15 años de experiencia, Taller Pérez es su solución integral para autos y
+                                motos. Nos especializamos en diagnóstico computarizado y mecánica general, ofreciendo un
+                                servicio honesto y garantizado.
+                            </p>
+                        </div>
+                        <div class="mt-6 md:mt-0 md:ml-6 flex-shrink-0">
+                            <a href="https://wa.me/59171234567" target="_blank"
+                                class="block w-full text-center bg-green-500 text-white text-lg font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-green-600 transition-colors">
+                                📞 Chatear por WhatsApp
+                            </a>
+                            <p class="text-center text-gray-700 font-semibold mt-3 text-lg">Tel: 712 34 567</p>
+                        </div>
+                    </div>
+                </div>
 
-                    <article class="taller-card">
-                        <div class="card-icon"><i class="fas fa-car-crash"></i></div>
-                        <h3 class="card-title">Taller de Chapería "El Artista"</h3>
-                        <p class="card-description">Especialistas en enderezado y pintura de alta calidad. Dejamos tu
-                            auto como nuevo.</p>
-                        <p class="card-address"><i class="fas fa-map-marker-alt"></i> Av. Barrientos, a una cuadra de la
-                            plaza.</p>
-                        <a href="tel:+59171234567" class="card-phone"><i class="fas fa-phone"></i> 71234567</a>
-                    </article>
+                <!-- Mapa e Imágenes -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+                    <div class="lg:col-span-2 bg-white rounded-lg shadow-xl p-6">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Ubicación</h3>
+                        <div class="w-full h-80 rounded-lg overflow-hidden border">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d953.4249112260218!2d-64.53483863044958!3d-17.91702849926715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93e7b16d080076cf%3A0xe54b986c75765956!2sPlaza%20Principal%20de%20Comarapa!5e0!3m2!1ses!2sbo!4v1700000000001"
+                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-xl p-6">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Galería</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <img src="https://placehold.co/300x200/6B7280/FFFFFF?text=Equipo" alt="[Imagen del equipo]"
+                                class="rounded-lg w-full h-full object-cover">
+                            <img src="https://placehold.co/300x200/1E3A8A/FFFFFF?text=Taller" alt="[Imagen del taller]"
+                                class="rounded-lg w-full h-full object-cover">
+                            <img src="https://placehold.co/300x200/DC2626/FFFFFF?text=Reparaci%C3%B3n"
+                                alt="[Imagen de reparación]" class="rounded-lg w-full h-full object-cover">
+                            <img src="https://placehold.co/300x200/1F2937/FFFFFF?text=Herramientas"
+                                alt="[Imagen de herramientas]" class="rounded-lg w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
 
-                    <article class="taller-card">
-                        <div class="card-icon"><i class="fas fa-cogs"></i></div>
-                        <h3 class="card-title">Mecánica General "Don Carlos"</h3>
-                        <p class="card-description">Reparación de motores, cajas, frenos y mantenimiento general. Años
-                            de experiencia.</p>
-                        <p class="card-address"><i class="fas fa-map-marker-alt"></i> Calle Sucre, esq. Bolívar.</p>
-                        <a href="tel:+59172234567" class="card-phone"><i class="fas fa-phone"></i> 72234567</a>
-                    </article>
+                <!-- Servicios del Taller -->
+                <div class="bg-white rounded-lg shadow-xl p-8 mb-8">
+                    <h3 class="text-3xl font-bold text-center text-gray-800 mb-10">Servicios Ofrecidos</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
 
-                    <article class="taller-card">
-                        <div class="card-icon"><i class="fas fa-motorcycle"></i></div>
-                        <h3 class="card-title">Taller de Motos "MotoSpeed"</h3>
-                        <p class="card-description">Servicio técnico para todo tipo de motocicletas. Repuestos y
-                            accesorios.</p>
-                        <p class="card-address"><i class="fas fa-map-marker-alt"></i> Zona El Carmen, frente al
-                            surtidor.</p>
-                        <a href="tel:+59169123456" class="card-phone"><i class="fas fa-phone"></i> 69123456</a>
-                    </article>
+                        <!-- Servicios para Autos -->
+                        <div>
+                            <h4 class="text-2xl font-semibold text-azul-principal mb-6 flex items-center">
+                                <!-- Icono Auto -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                    </path>
+                                </svg>
+                                Servicios para Autos
+                            </h4>
+                            <ul class="space-y-4">
+                                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                    <span class="text-rojo-vibrante mr-3">✓</span>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-800">Diagnóstico Computarizado</h5>
+                                        <p class="text-sm text-gray-600">Lectura de fallos y reseteo de sensores.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                    <span class="text-rojo-vibrante mr-3">✓</span>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-800">Frenos y Suspensión</h5>
+                                        <p class="text-sm text-gray-600">Revisión y cambio de pastillas, discos y
+                                            amortiguadores.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                    <span class="text-rojo-vibrante mr-3">✓</span>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-800">Mecánica General</h5>
+                                        <p class="text-sm text-gray-600">Reparación de motor, caja y más.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
 
-                    <article class="taller-card">
-                        <div class="card-icon"><i class="fas fa-bolt"></i></div>
-                        <h3 class="card-title">Electro-Mecánica "Gutiérrez"</h3>
-                        <p class="card-description">Expertos en sistema eléctrico, luces, alternadores y aire
-                            acondicionado automotriz.</p>
-                        <p class="card-address"><i class="fas fa-map-marker-alt"></i> Calle Warnes, (zona Mercado).</p>
-                        <a href="tel:+59170012345" class="card-phone"><i class="fas fa-phone"></i> 70012345</a>
-                    </article>
+                        <!-- Servicios para Motos -->
+                        <div>
+                            <h4 class="text-2xl font-semibold text-rojo-vibrante mb-6 flex items-center">
+                                <!-- Icono Moto -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4">
+                                    </path>
+                                </svg>
+                                Servicios para Motos
+                            </h4>
+                            <ul class="space-y-4">
+                                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                    <span class="text-rojo-vibrante mr-3">✓</span>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-800">Mantenimiento Preventivo</h5>
+                                        <p class="text-sm text-gray-600">Cambio de aceite, bujía y filtro de aire.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                    <span class="text-rojo-vibrante mr-3">✓</span>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-800">Kit de Arrastre</h5>
+                                        <p class="text-sm text-gray-600">Cambio de cadena, piñón y corona.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                    <span class="text-rojo-vibrante mr-3">✓</span>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-800">Diagnóstico Eléctrico</h5>
+                                        <p class="text-sm text-gray-600">Reparación de luces, batería y sistema de
+                                            arranque.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
 
-                    <article class="taller-card">
-                        <div class="card-icon"><i class="fas fa-dot-circle"></i></div>
-                        <h3 class="card-title">Vulcanizadora "El Cruce"</h3>
-                        <p class="card-description">Reparación y parchado de llantas al instante. Venta de llantas
-                            nuevas y usadas.</p>
-                        <p class="card-address"><i class="fas fa-map-marker-alt"></i> Salida a Santa Cruz, (El Cruce).
-                        </p>
-                        <a href="tel:+59176543210" class="card-phone"><i class="fas fa-phone"></i> 76543210</a>
-                    </article>
+                    </div>
+                </div>
 
-                    <article class="taller-card">
-                        <div class="card-icon"><i class="fas fa-truck-monster"></i></div>
-                        <h3 class="card-title">Taller "El Torno" (Maestranza)</h3>
-                        <p class="card-description">Soldadura especializada, rectificación de motores y piezas a medida.
-                            Trabajo pesado.</p>
-                        <p class="card-address"><i class="fas fa-map-marker-alt"></i> Barrio Lindo, Av. Circunvalación.
-                        </p>
-                        <a href="tel:+59167771234" class="card-phone"><i class="fas fa-phone"></i> 67771234</a>
-                    </article>
+                <!-- Opiniones y Formulario de Reseña -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Lista de Opiniones -->
+                    <div class="bg-white rounded-lg shadow-xl p-8">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6">Opiniones sobre este taller</h3>
+                        <div class="space-y-5">
+                            <div class="border-b pb-4">
+                                <div class="flex items-center mb-2">
+                                    <span class="font-semibold text-gray-900">Juan C.</span>
+                                    <span class="text-yellow-400 text-xl ml-auto">★★★★☆</span>
+                                </div>
+                                <p class="text-gray-700 italic">"Excelente atención. Me solucionaron un problema
+                                    eléctrico que en otros lados no pudieron."</p>
+                            </div>
+                            <div class="border-b pb-4">
+                                <div class="flex items-center mb-2">
+                                    <span class="font-semibold text-gray-900">Carla M.</span>
+                                    <span class="text-yellow-400 text-xl ml-auto">★★★★★</span>
+                                </div>
+                                <p class="text-gray-700 italic">"Llevé mi auto para cambio de aceite y fueron muy
+                                    rápidos y profesionales. 100% recomendado."</p>
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- Dejar una Reseña -->
+                    <div class="bg-white rounded-lg shadow-xl p-8">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6">Deja tu opinión</h3>
+                        <form action="#" method="POST">
+                            <div class="mb-4">
+                                <label for="resena-nombre" class="block text-sm font-medium text-gray-700">Tu
+                                    Nombre</label>
+                                <input type="text" id="resena-nombre" required
+                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-azul-principal focus:ring-azul-principal">
+                            </div>
+                            <div class="mb-4">
+                                <label for="resena-calificacion"
+                                    class="block text-sm font-medium text-gray-700">Calificación</label>
+                                <select id="resena-calificacion" required
+                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-azul-principal focus:ring-azul-principal">
+                                    <option value="5">★★★★★ (Excelente)</option>
+                                    <option value="4">★★★★☆ (Bueno)</option>
+                                    <option value="3">★★★☆☆ (Regular)</option>
+                                    <option value="2">★★☆☆☆ (Malo)</option>
+                                    <option value="1">★☆☆☆☆ (Pésimo)</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label for="resena-texto" class="block text-sm font-medium text-gray-700">Tu
+                                    Comentario</label>
+                                <textarea id="resena-texto" rows="4" required
+                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-azul-principal focus:ring-azul-principal"></textarea>
+                            </div>
+                            <button type="submit"
+                                class="w-full bg-rojo-vibrante text-white px-6 py-2 rounded-lg font-semibold shadow hover:bg-red-700 transition-colors">
+                                Enviar Opinión
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="comentarios" class="comments-section">
-            <div class="container">
-                <h2 class="section-title">Lo que dicen nuestros usuarios</h2>
+        <!-- =========== PÁGINA: SERVICIOS GENERALES =========== -->
+        <section id="page-servicios" class="py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-gray-800 text-center mb-4">Catálogo de Servicios</h2>
+                <p class="text-lg text-gray-700 text-center mb-12 max-w-2xl mx-auto">
+                    Explora los tipos de servicios que ofrecen los talleres en Comarapa. Encuentra el especialista que
+                    necesitas.
+                </p>
 
-                <div class="comments-list">
-                    <article class="comment-card">
-                        <blockquote>
-                            "¡Excelente servicio! Encontré el taller 'Don Carlos' gracias a esta página y me
-                            solucionaron el problema de frenos rapidísimo. Muy recomendado."
-                        </blockquote>
-                        <cite>— María A. (Comarapa)</cite>
-                    </article>
-
-                    <article class="comment-card">
-                        <blockquote>
-                            "Muy útil la página. Pude ver la dirección y llamar a la vulcanizadora 'El Cruce' antes de
-                            ir. Ahorré mucho tiempo."
-                        </blockquote>
-                        <cite>— Pedro G. (Transportista)</cite>
-                    </article>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Servicio 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-rojo-vibrante">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Mantenimiento General</h3>
+                        <p class="text-gray-700">Cambios de aceite, filtros, bujías y mantenimiento preventivo para
+                            autos y motos.</p>
+                    </div>
+                    <!-- Servicio 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-azul-principal">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Diagnóstico Computarizado</h3>
+                        <p class="text-gray-700">Escaneo de vehículos, detección de fallos electrónicos y reseteo de
+                            sensores.</p>
+                    </div>
+                    <!-- Servicio 3 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-gris-metalico">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Frenos y Suspensión</h3>
+                        <p class="text-gray-700">Revisión y cambio de pastillas, discos, amortiguadores y sistema de
+                            suspensión.</p>
+                    </div>
+                    <!-- Servicio 4 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-rojo-vibrante">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Pintura y Estética</h3>
+                        <p class="text-gray-700">Servicios de chaperío, pintura general, pulido y detallado para autos y
+                            motos.</p>
+                    </div>
+                    <!-- Servicio 5 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-azul-principal">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Mecánica Eléctrica</h3>
+                        <p class="text-gray-700">Reparación de sistemas de arranque, luces, baterías y fallos
+                            eléctricos.</p>
+                    </div>
+                    <!-- Servicio 6 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-gris-metalico">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Alineación y Balanceo</h3>
+                        <p class="text-gray-700">Servicio de alineación 3D y balanceo de neumáticos para un manejo
+                            seguro.</p>
+                    </div>
                 </div>
+            </div>
+        </section>
 
-                <form id="form-comentario" class="comment-form">
-                    <h3>Deja tu opinión</h3>
-                    <div class="form-group">
-                        <label for="nombre">Tu Nombre:</label>
-                        <input type="text" id="nombre" name="nombre" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="comentario">Tu Comentario:</label>
-                        <textarea id="comentario" name="comentario" rows="4" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-secondary">Enviar Comentario</button>
-                </form>
+        <!-- =========== PÁGINA: COMENTARIOS / OPINIONES =========== -->
+        <section id="page-comentarios" class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
 
+                    <!-- Formulario General de Opinión -->
+                    <div class="bg-white rounded-lg shadow-xl p-8">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-6">Deja tu Opinión General</h2>
+                        <p class="text-gray-700 mb-6">¿Tuviste una buena experiencia con algún taller? ¿O tienes una
+                            sugerencia para este sitio web? ¡Queremos escucharte!</p>
+                        <form action="#" method="POST">
+                            <div class="mb-4">
+                                <label for="opinion-nombre" class="block text-sm font-medium text-gray-700">Tu
+                                    Nombre</label>
+                                <input type="text" id="opinion-nombre" required
+                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-azul-principal focus:ring-azul-principal">
+                            </div>
+                            <div class="mb-4">
+                                <label for="opinion-taller" class="block text-sm font-medium text-gray-700">Nombre del
+                                    Taller (Opcional)</label>
+                                <input type="text" id="opinion-taller" placeholder="Ej: Taller Pérez"
+                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-azul-principal focus:ring-azul-principal">
+                            </div>
+                            <div class="mb-4">
+                                <label for="opinion-calificacion"
+                                    class="block text-sm font-medium text-gray-700">Calificación</label>
+                                <select id="opinion-calificacion" required
+                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-azul-principal focus:ring-azul-principal">
+                                    <option value="5">★★★★★ (Excelente)</option>
+                                    <option value="4">★★★★☆ (Bueno)</option>
+                                    <option value="3">★★★☆☆ (Regular)</option>
+                                    <option value="2">★★☆☆☆ (Malo)</option>
+                                    <option value="1">★☆☆☆☆ (Pésimo)</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label for="opinion-texto" class="block text-sm font-medium text-gray-700">Tu
+                                    Comentario</label>
+                                <textarea id="opinion-texto" rows="4" required
+                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-azul-principal focus:ring-azul-principal"></textarea>
+                            </div>
+                            <button type="submit"
+                                class="w-full bg-rojo-vibrante text-white px-6 py-2 rounded-lg font-semibold shadow hover:bg-red-700 transition-colors">
+                                Enviar Comentario
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Lista de Reseñas Recientes -->
+                    <div class="mt-8 lg:mt-0">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-6">Reseñas Más Recientes</h2>
+                        <div class="space-y-6">
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <div class="flex items-center mb-2">
+                                    <span class="font-semibold text-gray-900">Miguel S.</span>
+                                    <span class="text-yellow-400 text-xl ml-auto">★★★★★</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-2">Sobre: <span class="font-medium">Chaperío Auto
+                                        Color</span></p>
+                                <p class="text-gray-700 italic">"Dejaron mi auto como nuevo después de un choque. El
+                                    color quedó idéntico. Gran trabajo."</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <div class="flex items-center mb-2">
+                                    <span class="font-semibold text-gray-900">Lucía R.</span>
+                                    <span class="text-yellow-400 text-xl ml-auto">★★★★☆</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-2">Sobre: <span class="font-medium">Lubricentro
+                                        Comarapa</span></p>
+                                <p class="text-gray-700 italic">"Buena atención y rápidos para el cambio de aceite.
+                                    Tienen buenos precios en filtros."</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <div class="flex items-center mb-2">
+                                    <span class="font-semibold text-gray-900">Roberto V.</span>
+                                    <span class="text-yellow-400 text-xl ml-auto">★★★★★</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-2">Sobre: <span class="font-medium">Motos El
+                                        Valle</span></p>
+                                <p class="text-gray-700 italic">"¡El mejor taller de motos! Siempre honestos y me
+                                    explican todo lo que le hacen a mi moto."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========== PÁGINA: CONTÁCTANOS =========== -->
+        <section id="page-contactanos" class="py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-gray-800 text-center mb-10">Contáctanos</h2>
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2">
+                        <!-- Formulario de Contacto -->
+                        <div class="p-8">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-6">Envíanos un Mensaje</h3>
+                            <p class="text-gray-700 mb-6">
+                                ¿Tienes preguntas sobre el proyecto? ¿Quieres registrar tu taller? Escríbenos.
+                            </p>
+                            <form action="#" method="POST">
+                                <div class="mb-4">
+                                    <label for="contact-nombre" class="block text-sm font-medium text-gray-700">Tu
+                                        Nombre</label>
+                                    <input type="text" id="contact-nombre" required
+                                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-azul-principal focus:ring-azul-principal">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="contact-email" class="block text-sm font-medium text-gray-700">Tu
+                                        Correo</label>
+                                    <input type="email" id="contact-email" required
+                                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-azul-principal focus:ring-azul-principal">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="contact-asunto"
+                                        class="block text-sm font-medium text-gray-700">Asunto</label>
+                                    <input type="text" id="contact-asunto" required
+                                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-azul-principal focus:ring-azul-principal">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="contact-mensaje"
+                                        class="block text-sm font-medium text-gray-700">Mensaje</label>
+                                    <textarea id="contact-mensaje" rows="5" required
+                                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-azul-principal focus:ring-azul-principal"></textarea>
+                                </div>
+                                <button type="submit"
+                                    class="w-full bg-rojo-vibrante text-white px-6 py-3 rounded-lg font-semibold shadow hover:bg-red-700 transition-colors">
+                                    Enviar Mensaje
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Información y Mapa -->
+                        <div class="bg-gray-50 p-8">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-6">Información General</h3>
+                            <div class="space-y-4 text-gray-700">
+                                <p class="flex items-center">
+                                    <svg class="w-6 h-6 mr-3 text-azul-principal" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                        </path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                    Comarapa, Santa Cruz, Bolivia
+                                </p>
+                                <p class="flex items-center">
+                                    <svg class="w-6 h-6 mr-3 text-azul-principal" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                        </path>
+                                    </svg>
+                                    info@tallerescomarapa.bo
+                                </p>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 mt-8 mb-4">Síguenos</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-gris-metalico hover:text-rojo-vibrante transition-colors">
+                                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.5 10.5h-2v7h-3v-7h-1.5v-3h1.5v-2c0-1.1.4-2.5 2.5-2.5h2.5v3h-1.5c-.2 0-.5.1-.5.5v2h2l-.5 3z" />
+                                    </svg>
+                                </a>
+                                <a href="#" class="text-gris-metalico hover:text-rojo-vibrante transition-colors">
+                                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.6 6.7c.1.4.1.8.1 1.2 0 3.8-2.9 8.2-8.2 8.2-1.6 0-3.1-.5-4.4-1.3.2 0 .4 0 .7 0 1.3 0 2.5-.4 3.5-1.2-.6 0-1.1-.4-1.3-.9.2 0 .4 0 .6 0 .3 0 .5-.1.7-.1-.6-.1-1.1-.7-1.1-1.4v0c.2.1.4.2.7.2-.4-.3-.7-.7-.7-1.2 0-.3.1-.5.2-.8.7 1 1.7 1.6 2.8 1.8-.1-.2-.1-.4-.1-.6 0-1.5 1.2-2.7 2.7-2.7 1 0 1.8.4 2.4 1 .6-.1 1.2-.3 1.7-.6-.2.6-.6 1.1-1.1 1.4.5-.1 1-.2 1.4-.4-.3.5-.7.9-1.1 1.3z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="w-full h-64 rounded-lg shadow-inner overflow-hidden border mt-8">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15254.67021666249!2d-64.54283182877196!3d-17.91845648834951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93e7b17208579537%3A0x2897c99f925c404!2sComarapa!5e0!3m2!1ses!2sbo!4v1700000000000"
+                                    width="100%" height="100%" style="border:0;" allowfullscreen=""
+                                    loading="lazy"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========== PÁGINA: SOBRE NOSOTROS =========== -->
+        <section id="page-sobre-nosotros" class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold text-azul-principal mb-6">Sobre Este Proyecto</h2>
+                        <p class="text-lg text-gray-800 mb-6 leading-relaxed">
+                            "Promovemos los talleres locales de Comarapa, conectando mecánicos y clientes para
+                            fortalecer la economía local."
+                        </p>
+                        <p class="text-gray-700 mb-8">
+                            Este proyecto nació de la necesidad de digitalizar y dar visibilidad a los negocios de
+                            mecánica automotriz y de motocicletas en nuestro municipio. Creemos en el talento local y
+                            queremos facilitar que tanto residentes como visitantes encuentren el servicio que necesitan
+                            de forma rápida y confiable.
+                        </p>
+
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-xl font-semibold text-rojo-vibrante mb-2">Nuestra Misión</h3>
+                                <p class="text-gray-700">Ser la plataforma digital #1 de Comarapa para servicios
+                                    automotrices, promoviendo la confianza, la calidad y el comercio justo entre
+                                    clientes y talleres.</p>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-rojo-vibrante mb-2">Nuestra Visión</h3>
+                                <p class="text-gray-700">Un Comarapa donde cada taller mecánico prospere gracias a la
+                                    tecnología, y cada conductor maneje con la seguridad de tener el mejor soporte local
+                                    a un clic de distancia.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://placehold.co/600x500/1E3A8A/FFFFFF?text=Comarapa+y+su+Gente"
+                            alt="[Imagen de Comarapa y su gente trabajadora]"
+                            class="rounded-lg shadow-xl w-full h-full object-cover">
+                    </div>
+                </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="footer">
-        <div class="container" id="contacto">
-            <p>&copy; 2025 TallerApp Comarapa. Creado para ayudar a nuestra comunidad.</p>
-            <p>Comarapa, Santa Cruz, Bolivia.</p>
+    <!-- =========== PIE DE PÁGINA (FOOTER) =========== -->
+    <footer class="bg-gris-oscuro text-gray-400 pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+                <!-- Columna 1: Logo e Info -->
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-4">
+                        Talleres <span class="text-rojo-vibrante">Comarapa</span>
+                    </h3>
+                    <p class="text-sm mb-4">Conectando clientes con los mejores mecánicos de la región.</p>
+                    <p class="text-sm">Comarapa, Santa Cruz, Bolivia</p>
+                </div>
+
+                <!-- Columna 2: Enlaces Rápidos -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Enlaces Rápidos</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-rojo-vibrante transition-colors" data-page="inicio">Inicio</a>
+                        </li>
+                        <li><a href="#" class="hover:text-rojo-vibrante transition-colors"
+                                data-page="descubrir">Descubrir Talleres</a></li>
+                        <li><a href="#" class="hover:text-rojo-vibrante transition-colors"
+                                data-page="servicios">Servicios</a></li>
+                        <li><a href="#" class="hover:text-rojo-vibrante transition-colors"
+                                data-page="sobre-nosotros">Sobre Nosotros</a></li>
+                        <li><a href="#" class="hover:text-rojo-vibrante transition-colors"
+                                data-page="contactanos">Contáctanos</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Redes Sociales -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Síguenos</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-rojo-vibrante transition-colors"
+                            aria-label="Facebook">
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.5 10.5h-2v7h-3v-7h-1.5v-3h1.5v-2c0-1.1.4-2.5 2.5-2.5h2.5v3h-1.5c-.2 0-.5.1-.5.5v2h2l-.5 3z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-rojo-vibrante transition-colors"
+                            aria-label="Instagram">
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.6 6.1c.1.4.1.8.1 1.2 0 3.8-2.9 8.2-8.2 8.2-1.6 0-3.1-.5-4.4-1.3.2 0 .4 0 .7 0 1.3 0 2.5-.4 3.5-1.2-.6 0-1.1-.4-1.3-.9.2 0 .4 0 .6 0 .3 0 .5-.1.7-.1-.6-.1-1.1-.7-1.1-1.4v0c.2.1.4.2.7.2-.4-.3-.7-.7-.7-1.2 0-.3.1-.5.2-.8.7 1 1.7 1.6 2.8 1.8-.1-.2-.1-.4-.1-.6 0-1.5 1.2-2.7 2.7-2.7 1 0 1.8.4 2.4 1 .6-.1 1.2-.3 1.7-.6-.2.6-.6 1.1-1.1 1.4.5-.1 1-.2 1.4-.4-.3.5-.7.9-1.1 1.3z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-rojo-vibrante transition-colors"
+                            aria-label="WhatsApp">
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12.04 2C6.58 2 2.13 6.45 2.13 12c0 1.8.48 3.47 1.34 4.9L2 22l5.3-1.42c1.37.8 2.94 1.27 4.57 1.27 5.46 0 9.9-4.45 9.9-9.9S17.5 2 12.04 2zm0 18.2c-1.4 0-2.73-.38-3.87-1.05l-.28-.16-2.88.75.77-2.8-.18-.3c-.73-1.18-1.12-2.55-1.12-4.02 0-4.54 3.68-8.23 8.22-8.23 4.54 0 8.22 3.7 8.22 8.23 0 4.54-3.68 8.23-8.22 8.23zm4.5-6.2c-.25-.12-1.47-.72-1.7-.8-.22-.08-.38-.12-.54.12-.16.25-.64.8-.8 1-.14.16-.3.2-.54.08-.25-.12-.84-.3-1.85-1.13-.8-.7-1.34-1.56-1.5-1.84-.14-.28-.02-.43.1-.55.1-.1.25-.28.38-.42.12-.12.16-.2.25-.33.08-.12.04-.25-.02-.37-.06-.12-.54-1.3-.74-1.8-.2-.48-.4-.4-.55-.4h-.4c-.16 0-.42.04-.64.25-.22.2-.8.78-.8 1.9 0 1.1.82 2.2 1 2.37.1.16 1.63 2.48 4 3.5.57.24 1 .37 1.35.48.56.16 1.05.14 1.44.08.43-.06 1.47-.6 1.67-1.18.2-.58.2-1.08.14-1.18-.08-.12-.25-.2-.5-.33z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Barra de Copyright -->
+            <div class="border-t border-gray-700 mt-10 pt-8 text-center text-sm">
+                <p>&copy; <span id="current-year"></span> Talleres de Comarapa. Todos los derechos reservados.</p>
+                <p class="mt-1">Un proyecto para la comunidad. 🇧🇴</p>
+            </div>
         </div>
     </footer>
+
+
+    <!-- =========== SCRIPT DE NAVEGACIÓN =========== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Lógica de Navegación SPA (Single Page Application) ---
+
+            const navLinks = document.querySelectorAll('a[data-page]');
+            const pages = document.querySelectorAll('main > section');
+            const mobileMenu = document.getElementById('menu-mobile');
+            const menuToggle = document.getElementById('menu-toggle');
+
+            // Función para mostrar la página seleccionada y ocultar las demás
+            function showPage(pageId) {
+                // Ocultar todas las páginas
+                pages.forEach(page => {
+                    page.style.display = 'none';
+                });
+
+                // Mostrar la página solicitada
+                const activePage = document.getElementById(`page-${pageId}`);
+                if (activePage) {
+                    activePage.style.display = 'block';
+                } else {
+                    // Si no se encuentra, mostrar inicio
+                    document.getElementById('page-inicio').style.display = 'block';
+                }
+
+                // Actualizar el estado activo en los enlaces de navegación
+                updateActiveNavLinks(pageId);
+
+                // Ocultar el menú móvil después de hacer clic
+                if (mobileMenu) {
+                    mobileMenu.classList.add('hidden');
+                }
+
+                // Volver al inicio de la página
+                window.scrollTo(0, 0);
+            }
+
+            // Función para actualizar los enlaces activos
+            function updateActiveNavLinks(activePageId) {
+                // Actualizar enlaces de escritorio
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                    if (link.dataset.page === activePageId) {
+                        link.classList.add('active');
+                    }
+                });
+                // (Opcional) Actualizar enlaces móviles si tuvieran una clase 'active'
+            }
+
+            // Añadir listener a todos los enlaces de navegación
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault(); // Prevenir el comportamiento por defecto del enlace
+                    const pageId = link.dataset.page;
+                    showPage(pageId);
+                });
+            });
+
+            // --- Lógica del Menú Móvil ---
+            if (menuToggle && mobileMenu) {
+                menuToggle.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // --- Lógica del Año Actual en el Footer ---
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+
+            // Mostrar la página de inicio por defecto
+            showPage('inicio');
+
+        });
+    </script>
 
 </body>
 
