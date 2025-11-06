@@ -25,6 +25,9 @@
         }
     </script>
 
+    <!-- Script para manejo de detalles de talleres -->
+    <script src="js/taller-detalle.js"></script>
+
     <!-- Estilos CSS personalizados -->
     <style>
         /* Estilo para el enlace activo en la navegación */
@@ -152,9 +155,9 @@
                                 <h3 class="text-2xl font-bold text-gray-900 my-2">Electro Sandy's</h3>
                                 <p class="text-gris-metalico text-sm mb-3">Av. Principal, Zona Central</p>
                                 <p class="text-gray-700 text-sm mb-4">Expertos en sistemas eléctricos automotrices. Diagnóstico y reparación de alternadores, arranques y sistemas electrónicos.</p>
-                                <p class="text-gray-900 font-semibold mb-4">📞 +591 712 34 567</p>
+                                <p class="text-gray-900 font-semibold mb-4">📞 +591 63457165</p>
                                 <a href="#" class="text-rojo-vibrante font-semibold hover:underline"
-                                    data-page="taller-detalle">Ver detalles →</a>
+                                    data-page="taller-detalle" data-taller="electro-sandys">Ver detalles →</a>
                             </div>
                         </div>
 
@@ -170,9 +173,9 @@
                                 <h3 class="text-2xl font-bold text-gray-900 my-2">Moto Repuestos Rojas</h3>
                                 <p class="text-gris-metalico text-sm mb-3">C. Los Pinos #123</p>
                                 <p class="text-gray-700 text-sm mb-4">Venta de repuestos originales y servicio técnico especializado para todo tipo de motocicletas. Reparaciones garantizadas.</p>
-                                <p class="text-gray-900 font-semibold mb-4">📞 +591 700 12 345</p>
+                                <p class="text-gray-900 font-semibold mb-4">📞 +591 71396978</p>
                                 <a href="#" class="text-rojo-vibrante font-semibold hover:underline"
-                                    data-page="taller-detalle">Ver detalles →</a>
+                                    data-page="taller-detalle" data-taller="taller-rojas">Ver detalles →</a>
                             </div>
                         </div>
 
@@ -188,7 +191,7 @@
                                 <h3 class="text-2xl font-bold text-gray-900 my-2">Taller Sejas</h3>
                                 <p class="text-gris-metalico text-sm mb-3">Av. Las Palmeras #456</p>
                                 <p class="text-gray-700 text-sm mb-4">Taller multimarca con más de 20 años de experiencia. Especialistas en mecánica general, mantenimiento y reparaciones mayores.</p>
-                                <p class="text-gray-900 font-semibold mb-4">📞 +591 690 98 765</p>
+                                <p class="text-gray-900 font-semibold mb-4">📞 +591 74652418</p>
                                 <a href="#" class="text-rojo-vibrante font-semibold hover:underline"
                                     data-page="taller-detalle">Ver detalles →</a>
                             </div>
@@ -350,10 +353,10 @@
                                 class="inline-block bg-azul-principal text-white text-xs px-3 py-1 rounded-full uppercase font-semibold">Especialista Eléctrico</span>
                             <h3 class="text-2xl font-bold text-gray-900 my-2">Electro Sandy's</h3>
                             <p class="text-gris-metalico text-sm mb-3">Av. Principal, Zona Central</p>
-                            <p class="text-gray-900 font-semibold mb-4">📞 +591 712 34 567</p>
+                            <p class="text-gray-900 font-semibold mb-4">📞 +591 63457165</p>
                             <a href="#"
                                 class="bg-azul-principal text-white text-sm font-semibold px-5 py-2 rounded-lg shadow hover:bg-blue-800 transition-colors w-full text-center block"
-                                data-page="taller-detalle">
+                                data-page="taller-detalle" data-taller="electro-sandys">
                                 Ver Detalles
                             </a>
                         </div>
@@ -368,10 +371,10 @@
                                 class="inline-block bg-rojo-vibrante text-white text-xs px-3 py-1 rounded-full uppercase font-semibold">Solo Motos</span>
                             <h3 class="text-2xl font-bold text-gray-900 my-2">Moto Repuestos Rojas</h3>
                             <p class="text-gris-metalico text-sm mb-3">C. Los Pinos #123</p>
-                            <p class="text-gray-900 font-semibold mb-4">📞 +591 700 12 345</p>
+                            <p class="text-gray-900 font-semibold mb-4">📞 +591 71396978</p>
                             <a href="#"
                                 class="bg-azul-principal text-white text-sm font-semibold px-5 py-2 rounded-lg shadow hover:bg-blue-800 transition-colors w-full text-center block"
-                                data-page="taller-detalle">
+                                data-page="taller-detalle" data-taller="taller-rojas">
                                 Ver Detalles
                             </a>
                         </div>
@@ -386,10 +389,10 @@
                                 class="inline-block bg-gris-metalico text-white text-xs px-3 py-1 rounded-full uppercase font-semibold">Autos y Motos</span>
                             <h3 class="text-2xl font-bold text-gray-900 my-2">Taller Sejas</h3>
                             <p class="text-gris-metalico text-sm mb-3">Av. Las Palmeras #456</p>
-                            <p class="text-gray-900 font-semibold mb-4">📞 +591 690 98 765</p>
+                            <p class="text-gray-900 font-semibold mb-4">📞 +591 74652418</p>
                             <a href="#"
                                 class="bg-azul-principal text-white text-sm font-semibold px-5 py-2 rounded-lg shadow hover:bg-blue-800 transition-colors w-full text-center block"
-                                data-page="taller-detalle">
+                                data-page="taller-detalle" data-taller="taller-sejas">
                                 Ver Detalles
                             </a>
                         </div>
@@ -404,10 +407,10 @@
                                 class="inline-block bg-gris-oscuro text-white text-xs px-3 py-1 rounded-full uppercase font-semibold">Mecánica General</span>
                             <h3 class="text-2xl font-bold text-gray-900 my-2">Taller Juliancito</h3>
                             <p class="text-gris-metalico text-sm mb-3">C. San Martín #789</p>
-                            <p class="text-gray-900 font-semibold mb-4">📞 +591 765 43 210</p>
+                            <p class="text-gray-900 font-semibold mb-4">📞 +591 62998960</p>
                             <a href="#"
                                 class="bg-azul-principal text-white text-sm font-semibold px-5 py-2 rounded-lg shadow hover:bg-blue-800 transition-colors w-full text-center block"
-                                data-page="taller-detalle">
+                                data-page="taller-detalle" data-taller="taller-juliancito">
                                 Ver Detalles
                             </a>
                         </div>
@@ -422,7 +425,7 @@
                                 class="inline-block bg-gris-oscuro text-white text-xs px-3 py-1 rounded-full uppercase font-semibold">Autos y Motos</span>
                             <h3 class="text-2xl font-bold text-gray-900 my-2">Taller Zorrito</h3>
                             <p class="text-gris-metalico text-sm mb-3">Av. Principal #321</p>
-                            <p class="text-gray-900 font-semibold mb-4">📞 +591 765 43 210</p>
+                            <p class="text-gray-900 font-semibold mb-4">📞 +591 72695928</p>
                             <a href="#"
                                 class="bg-azul-principal text-white text-sm font-semibold px-5 py-2 rounded-lg shadow hover:bg-blue-800 transition-colors w-full text-center block"
                                 data-page="taller-detalle">
@@ -435,83 +438,340 @@
             </div>
         </section>
 
-        <!-- =========== PÁGINA: DETALLE DEL TALLER (PLANTILLA) =========== -->
-        <!-- Esta sección se usa como plantilla para todos los talleres. -->
+        <!-- =========== PÁGINA: DETALLE DEL TALLER =========== -->
         <section id="page-taller-detalle" class="py-16">
-            <div class="container mx-auto px-4">
-
-                <!-- Encabezado del Taller -->
+            <!-- Electro Sandy's -->
+            <div id="detalle-electro-sandys" class="container mx-auto px-4 hidden taller-detalle">
                 <div class="bg-white rounded-lg shadow-xl p-8 mb-8">
                     <div class="flex flex-col md:flex-row md:items-center justify-between">
                         <div>
-                            <h2 class="text-4xl font-bold text-azul-principal">Taller Pérez (Ejemplo)</h2>
-                            <p class="text-lg text-gris-metalico mt-2">Av. Barrientos, esq. Warnes, Zona Central</p>
+                            <h2 class="text-4xl font-bold text-azul-principal">Electro Sandy's</h2>
+                            <p class="text-lg text-gris-metalico mt-2">Av. Principal, Zona Central</p>
                             <p class="text-gray-700 mt-4 max-w-lg">
-                                Con más de 15 años de experiencia, Taller Pérez es su solución integral para autos y
-                                motos. Nos especializamos en diagnóstico computarizado y mecánica general, ofreciendo un
-                                servicio honesto y garantizado.
+                                Expertos en sistemas eléctricos automotrices. Atendido por Marco Antonio Sandy, especialista con años de experiencia en diagnóstico y reparación de sistemas eléctricos vehiculares.
                             </p>
                         </div>
                         <div class="mt-6 md:mt-0 md:ml-6 flex-shrink-0">
-                            <a href="https://wa.me/59171234567" target="_blank"
+                            <a href="https://wa.me/59163457165" target="_blank"
                                 class="block w-full text-center bg-green-500 text-white text-lg font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-green-600 transition-colors">
                                 📞 Chatear por WhatsApp
                             </a>
-                            <p class="text-center text-gray-700 font-semibold mt-3 text-lg">Tel: 712 34 567</p>
+                            <p class="text-center text-gray-700 font-semibold mt-3 text-lg">Tel: +591 63457165</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Mapa e Imágenes -->
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
-                    <div class="lg:col-span-2 bg-white rounded-lg shadow-xl p-6">
-                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Ubicación</h3>
-                        <div class="w-full h-80 rounded-lg overflow-hidden border">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d953.4249112260218!2d-64.53483863044958!3d-17.91702849926715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93e7b16d080076cf%3A0xe54b986c75765956!2sPlaza%20Principal%20de%20Comarapa!5e0!3m2!1ses!2sbo!4v1700000000001"
-                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-xl p-6">
-                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Galería</h3>
-                        <div class="grid grid-cols-2 gap-4">
-                            <img src="https://placehold.co/300x200/6B7280/FFFFFF?text=Equipo" alt="[Imagen del equipo]"
-                                class="rounded-lg w-full h-full object-cover">
-                            <img src="https://placehold.co/300x200/1E3A8A/FFFFFF?text=Taller" alt="[Imagen del taller]"
-                                class="rounded-lg w-full h-full object-cover">
-                            <img src="https://placehold.co/300x200/DC2626/FFFFFF?text=Reparaci%C3%B3n"
-                                alt="[Imagen de reparación]" class="rounded-lg w-full h-full object-cover">
-                            <img src="https://placehold.co/300x200/1F2937/FFFFFF?text=Herramientas"
-                                alt="[Imagen de herramientas]" class="rounded-lg w-full h-full object-cover">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Servicios del Taller -->
+                <!-- Servicios -->
                 <div class="bg-white rounded-lg shadow-xl p-8 mb-8">
-                    <h3 class="text-3xl font-bold text-center text-gray-800 mb-10">Servicios Ofrecidos</h3>
+                    <h3 class="text-3xl font-bold text-center text-gray-800 mb-10">Servicios Especializados</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-
-                        <!-- Servicios para Autos -->
                         <div>
-                            <h4 class="text-2xl font-semibold text-azul-principal mb-6 flex items-center">
-                                <!-- Icono Auto -->
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
-                                    </path>
-                                </svg>
-                                Servicios para Autos
-                            </h4>
                             <ul class="space-y-4">
                                 <li class="flex items-start p-3 bg-gray-50 rounded-lg">
                                     <span class="text-rojo-vibrante mr-3">✓</span>
                                     <div>
-                                        <h5 class="font-semibold text-gray-800">Diagnóstico Computarizado</h5>
-                                        <p class="text-sm text-gray-600">Lectura de fallos y reseteo de sensores.</p>
+                                        <h5 class="font-semibold text-gray-800">Diagnóstico Eléctrico</h5>
+                                        <p class="text-sm text-gray-600">Detección y solución de fallas en el sistema eléctrico.</p>
                                     </div>
                                 </li>
+                                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                    <span class="text-rojo-vibrante mr-3">✓</span>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-800">Reparación de Alternadores</h5>
+                                        <p class="text-sm text-gray-600">Mantenimiento y reparación de sistemas de carga.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                    <span class="text-rojo-vibrante mr-3">✓</span>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-800">Sistemas de Arranque</h5>
+                                        <p class="text-sm text-gray-600">Reparación de motores de arranque y sistemas relacionados.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="space-y-4">
+                                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                    <span class="text-rojo-vibrante mr-3">✓</span>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-800">Instalaciones Eléctricas</h5>
+                                        <p class="text-sm text-gray-600">Instalación de accesorios y sistemas adicionales.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                    <span class="text-rojo-vibrante mr-3">✓</span>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-800">Diagnóstico Computarizado</h5>
+                                        <p class="text-sm text-gray-600">Lectura y análisis de códigos de falla.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Taller de Moto Repuestos Rojas -->
+            <div id="detalle-taller-rojas" class="container mx-auto px-4 hidden taller-detalle">
+                <div class="bg-white rounded-lg shadow-xl p-8 mb-8">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between">
+                        <div>
+                            <h2 class="text-4xl font-bold text-azul-principal">Taller de Moto Repuestos Rojas</h2>
+                            <p class="text-lg text-gris-metalico mt-2">C. Los Pinos #123</p>
+                            <p class="text-gray-700 mt-4 max-w-lg">
+                                Taller especializado en motocicletas dirigido por Rosalinda y Daniel. Ofrecemos servicio técnico profesional y venta de repuestos originales para todo tipo de motos.
+                            </p>
+                        </div>
+                        <div class="mt-6 md:mt-0 md:ml-6 flex-shrink-0">
+                            <a href="https://wa.me/59171396978" target="_blank"
+                                class="block w-full text-center bg-green-500 text-white text-lg font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-green-600 transition-colors">
+                                📞 Chatear por WhatsApp
+                            </a>
+                            <p class="text-center text-gray-700 font-semibold mt-3 text-lg">Tel: +591 71396978</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicios -->
+                <div class="bg-white rounded-lg shadow-xl p-8 mb-8">
+                    <h3 class="text-3xl font-bold text-center text-gray-800 mb-10">Servicios para Motos</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                        <div>
+                            <ul class="space-y-4">
+                                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                    <span class="text-rojo-vibrante mr-3">✓</span>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-800">Mantenimiento General</h5>
+                                        <p class="text-sm text-gray-600">Servicio completo para todas las marcas.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                    <span class="text-rojo-vibrante mr-3">✓</span>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-800">Venta de Repuestos</h5>
+                                        <p class="text-sm text-gray-600">Amplio stock de piezas originales y alternativas.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="space-y-4">
+                                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                    <span class="text-rojo-vibrante mr-3">✓</span>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-800">Reparación de Motores</h5>
+                                        <p class="text-sm text-gray-600">Diagnóstico y reparación especializada.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                    <span class="text-rojo-vibrante mr-3">✓</span>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-800">Servicio Eléctrico</h5>
+                                        <p class="text-sm text-gray-600">Reparación de sistemas eléctricos.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Taller Sejas -->
+            <div id="detalle-taller-sejas" class="container mx-auto px-4 hidden taller-detalle">
+                <div class="bg-white rounded-lg shadow-xl p-8 mb-8">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between">
+                        <div>
+                            <h2 class="text-4xl font-bold text-azul-principal">Taller Sejas</h2>
+                            <p class="text-lg text-gris-metalico mt-2">Av. Las Palmeras #456</p>
+                            <p class="text-gray-700 mt-4 max-w-lg">
+                                Taller de tornería profesional dirigido por Marco Sejas. Especialistas en fabricación y reparación de piezas mecánicas con precisión.
+                            </p>
+                        </div>
+                        <div class="mt-6 md:mt-0 md:ml-6 flex-shrink-0">
+                            <a href="https://wa.me/59174652418" target="_blank"
+                                class="block w-full text-center bg-green-500 text-white text-lg font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-green-600 transition-colors">
+                                📞 Chatear por WhatsApp
+                            </a>
+                            <p class="text-center text-gray-700 font-semibold mt-3 text-lg">Tel: +591 74652418</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicios -->
+                <div class="bg-white rounded-lg shadow-xl p-8 mb-8">
+                    <h3 class="text-3xl font-bold text-center text-gray-800 mb-10">Servicios de Tornería</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                        <div>
+                            <ul class="space-y-4">
+                                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                    <span class="text-rojo-vibrante mr-3">✓</span>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-800">Fabricación de Piezas</h5>
+                                        <p class="text-sm text-gray-600">Creación de piezas personalizadas.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                    <span class="text-rojo-vibrante mr-3">✓</span>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-800">Reparación de Ejes</h5>
+                                        <p class="text-sm text-gray-600">Rectificación y reparación de precisión.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="space-y-4">
+                                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                    <span class="text-rojo-vibrante mr-3">✓</span>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-800">Mecanizado de Precisión</h5>
+                                        <p class="text-sm text-gray-600">Trabajos de alta precisión en torno.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                    <span class="text-rojo-vibrante mr-3">✓</span>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-800">Soldadura Especializada</h5>
+                                        <p class="text-sm text-gray-600">Soldadura de precisión para piezas mecánicas.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Taller Juliancito -->
+            <div id="detalle-taller-juliancito" class="container mx-auto px-4 hidden taller-detalle">
+                <div class="bg-white rounded-lg shadow-xl p-8 mb-8">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between">
+                        <div>
+                            <h2 class="text-4xl font-bold text-azul-principal">Taller Juliancito</h2>
+                            <p class="text-lg text-gris-metalico mt-2">C. San Martín #789</p>
+                            <p class="text-gray-700 mt-4 max-w-lg">
+                                Taller de mecánica general dirigido por Cristian Paredes Sandy. Ofrecemos servicios completos de reparación y mantenimiento para todo tipo de vehículos.
+                            </p>
+                        </div>
+                        <div class="mt-6 md:mt-0 md:ml-6 flex-shrink-0">
+                            <a href="https://wa.me/59162998960" target="_blank"
+                                class="block w-full text-center bg-green-500 text-white text-lg font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-green-600 transition-colors">
+                                📞 Chatear por WhatsApp
+                            </a>
+                            <p class="text-center text-gray-700 font-semibold mt-3 text-lg">Tel: +591 62998960</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicios -->
+                <div class="bg-white rounded-lg shadow-xl p-8 mb-8">
+                    <h3 class="text-3xl font-bold text-center text-gray-800 mb-10">Servicios Mecánicos</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                        <div>
+                            <ul class="space-y-4">
+                                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                    <span class="text-rojo-vibrante mr-3">✓</span>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-800">Mecánica General</h5>
+                                        <p class="text-sm text-gray-600">Reparación y mantenimiento integral.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                    <span class="text-rojo-vibrante mr-3">✓</span>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-800">Afinación de Motor</h5>
+                                        <p class="text-sm text-gray-600">Optimización del rendimiento del motor.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="space-y-4">
+                                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                    <span class="text-rojo-vibrante mr-3">✓</span>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-800">Frenos y Suspensión</h5>
+                                        <p class="text-sm text-gray-600">Mantenimiento de sistemas de seguridad.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                    <span class="text-rojo-vibrante mr-3">✓</span>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-800">Diagnóstico Computarizado</h5>
+                                        <p class="text-sm text-gray-600">Detección y solución de fallas.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Taller Zorrito -->
+            <div id="detalle-taller-zorrito" class="container mx-auto px-4 hidden taller-detalle">
+                <div class="bg-white rounded-lg shadow-xl p-8 mb-8">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between">
+                        <div>
+                            <h2 class="text-4xl font-bold text-azul-principal">Taller Zorrito</h2>
+                            <p class="text-lg text-gris-metalico mt-2">Av. Principal #321</p>
+                            <p class="text-gray-700 mt-4 max-w-lg">
+                                Taller multiservicios dirigido por Antonio Galarza. Especialistas en reparación de vehículos con experiencia en diferentes marcas y modelos.
+                            </p>
+                        </div>
+                        <div class="mt-6 md:mt-0 md:ml-6 flex-shrink-0">
+                            <a href="https://wa.me/59172695928" target="_blank"
+                                class="block w-full text-center bg-green-500 text-white text-lg font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-green-600 transition-colors">
+                                📞 Chatear por WhatsApp
+                            </a>
+                            <p class="text-center text-gray-700 font-semibold mt-3 text-lg">Tel: +591 72695928</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicios -->
+                <div class="bg-white rounded-lg shadow-xl p-8 mb-8">
+                    <h3 class="text-3xl font-bold text-center text-gray-800 mb-10">Servicios Ofrecidos</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                        <div>
+                            <ul class="space-y-4">
+                                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                    <span class="text-rojo-vibrante mr-3">✓</span>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-800">Reparación General</h5>
+                                        <p class="text-sm text-gray-600">Servicio completo para autos y motos.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                    <span class="text-rojo-vibrante mr-3">✓</span>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-800">Sistemas de Inyección</h5>
+                                        <p class="text-sm text-gray-600">Mantenimiento y reparación de inyectores.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="space-y-4">
+                                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                    <span class="text-rojo-vibrante mr-3">✓</span>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-800">Electricidad Automotriz</h5>
+                                        <p class="text-sm text-gray-600">Diagnóstico y reparación eléctrica.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                    <span class="text-rojo-vibrante mr-3">✓</span>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-800">Alineación y Balanceo</h5>
+                                        <p class="text-sm text-gray-600">Servicio de alineación computarizada.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
                                 <li class="flex items-start p-3 bg-gray-50 rounded-lg">
                                     <span class="text-rojo-vibrante mr-3">✓</span>
                                     <div>
