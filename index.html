@@ -25,8 +25,7 @@
         }
     </script>
 
-    <!-- Script para manejo de detalles de talleres -->
-    <script src="js/taller-detalle.js"></script>
+
 
     <!-- Estilos CSS personalizados -->
     <style>
@@ -450,6 +449,7 @@
 
         <!-- =========== PÁGINA: DETALLE DEL TALLER =========== -->
         <section id="page-taller-detalle" class="py-16">
+
             <!-- Electro Sandy's -->
             <div id="detalle-electro-sandys" class="container mx-auto px-4 hidden taller-detalle">
                 <div class="bg-white rounded-lg shadow-xl p-8 mb-8">
@@ -478,6 +478,17 @@
                     <h3 class="text-3xl font-bold text-center text-gray-800 mb-10">Servicios Especializados</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                         <div>
+                            <h4 class="text-2xl font-semibold text-rojo-vibrante mb-6 flex items-center">
+                                <!-- Icono Auto -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 17l-2 2-2-2m4-4h6l2 4h-3l-2-4z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 17h-2a2 2 0 00-2-2H7a2 2 0 00-2 2H3a2 2 0 00-2 2v1h20v-1a2 2 0 00-2-2z" />
+                                </svg>
+                                Servicios para Autos
+                            </h4>
                             <ul class="space-y-4">
                                 <li class="flex items-start p-3 bg-gray-50 rounded-lg">
                                     <span class="text-rojo-vibrante mr-3">✓</span>
@@ -503,10 +514,6 @@
                                             relacionados.</p>
                                     </div>
                                 </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <ul class="space-y-4">
                                 <li class="flex items-start p-3 bg-gray-50 rounded-lg">
                                     <span class="text-rojo-vibrante mr-3">✓</span>
                                     <div>
@@ -555,6 +562,15 @@
                     <h3 class="text-3xl font-bold text-center text-gray-800 mb-10">Servicios para Motos</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                         <div>
+                            <h4 class="text-2xl font-semibold text-rojo-vibrante mb-6 flex items-center">
+                                <!-- Icono Moto -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                                </svg>
+                                Servicios para Motos
+                            </h4>
                             <ul class="space-y-4">
                                 <li class="flex items-start p-3 bg-gray-50 rounded-lg">
                                     <span class="text-rojo-vibrante mr-3">✓</span>
@@ -571,10 +587,6 @@
                                             alternativas.</p>
                                     </div>
                                 </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <ul class="space-y-4">
                                 <li class="flex items-start p-3 bg-gray-50 rounded-lg">
                                     <span class="text-rojo-vibrante mr-3">✓</span>
                                     <div>
@@ -603,8 +615,8 @@
                             <h2 class="text-4xl font-bold text-azul-principal">Taller Sejas</h2>
                             <p class="text-lg text-gris-metalico mt-2">Av. Las Palmeras #456</p>
                             <p class="text-gray-700 mt-4 max-w-lg">
-                                Taller de tornería profesional dirigido por Marco Sejas. Especialistas en fabricación y
-                                reparación de piezas mecánicas con precisión.
+                                Taller multimarca con más de 20 años de experiencia. Especialistas en mecánica general,
+                                mantenimiento y reparaciones mayores para autos y motos.
                             </p>
                         </div>
                         <div class="mt-6 md:mt-0 md:ml-6 flex-shrink-0">
@@ -619,45 +631,86 @@
 
                 <!-- Servicios -->
                 <div class="bg-white rounded-lg shadow-xl p-8 mb-8">
-                    <h3 class="text-3xl font-bold text-center text-gray-800 mb-10">Servicios de Tornería</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <h3 class="text-3xl font-bold text-center text-gray-800 mb-10">Servicios Ofrecidos</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+                        <!-- Servicios para Autos -->
                         <div>
+                            <h4 class="text-2xl font-semibold text-rojo-vibrante mb-6 flex items-center">
+                                <!-- Icono Auto -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 17l-2 2-2-2m4-4h6l2 4h-3l-2-4z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 17h-2a2 2 0 00-2-2H7a2 2 0 00-2 2H3a2 2 0 00-2 2v1h20v-1a2 2 0 00-2-2z" />
+                                </svg>
+                                Servicios para Autos
+                            </h4>
                             <ul class="space-y-4">
                                 <li class="flex items-start p-3 bg-gray-50 rounded-lg">
                                     <span class="text-rojo-vibrante mr-3">✓</span>
                                     <div>
-                                        <h5 class="font-semibold text-gray-800">Fabricación de Piezas</h5>
-                                        <p class="text-sm text-gray-600">Creación de piezas personalizadas.</p>
+                                        <h5 class="font-semibold text-gray-800">Mantenimiento Preventivo</h5>
+                                        <p class="text-sm text-gray-600">Cambio de aceite, filtros y revisión de
+                                            niveles.</p>
                                     </div>
                                 </li>
                                 <li class="flex items-start p-3 bg-gray-50 rounded-lg">
                                     <span class="text-rojo-vibrante mr-3">✓</span>
                                     <div>
-                                        <h5 class="font-semibold text-gray-800">Reparación de Ejes</h5>
-                                        <p class="text-sm text-gray-600">Rectificación y reparación de precisión.</p>
+                                        <h5 class="font-semibold text-gray-800">Frenos y Suspensión</h5>
+                                        <p class="text-sm text-gray-600">Revisión y cambio de pastillas, discos y
+                                            amortiguadores.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                    <span class="text-rojo-vibrante mr-3">✓</span>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-800">Mecánica General</h5>
+                                        <p class="text-sm text-gray-600">Reparación de motor, caja y más.</p>
                                     </div>
                                 </li>
                             </ul>
                         </div>
+
+                        <!-- Servicios para Motos -->
                         <div>
+                            <h4 class="text-2xl font-semibold text-rojo-vibrante mb-6 flex items-center">
+                                <!-- Icono Moto -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                                </svg>
+                                Servicios para Motos
+                            </h4>
                             <ul class="space-y-4">
                                 <li class="flex items-start p-3 bg-gray-50 rounded-lg">
                                     <span class="text-rojo-vibrante mr-3">✓</span>
                                     <div>
-                                        <h5 class="font-semibold text-gray-800">Mecanizado de Precisión</h5>
-                                        <p class="text-sm text-gray-600">Trabajos de alta precisión en torno.</p>
+                                        <h5 class="font-semibold text-gray-800">Mantenimiento Preventivo</h5>
+                                        <p class="text-sm text-gray-600">Cambio de aceite, bujía y filtro de aire.</p>
                                     </div>
                                 </li>
                                 <li class="flex items-start p-3 bg-gray-50 rounded-lg">
                                     <span class="text-rojo-vibrante mr-3">✓</span>
                                     <div>
-                                        <h5 class="font-semibold text-gray-800">Soldadura Especializada</h5>
-                                        <p class="text-sm text-gray-600">Soldadura de precisión para piezas mecánicas.
-                                        </p>
+                                        <h5 class="font-semibold text-gray-800">Kit de Arrastre</h5>
+                                        <p class="text-sm text-gray-600">Cambio de cadena, piñón y corona.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                    <span class="text-rojo-vibrante mr-3">✓</span>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-800">Diagnóstico Eléctrico</h5>
+                                        <p class="text-sm text-gray-600">Reparación de luces, batería y sistema de
+                                            arranque.</p>
                                     </div>
                                 </li>
                             </ul>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -689,6 +742,17 @@
                     <h3 class="text-3xl font-bold text-center text-gray-800 mb-10">Servicios Mecánicos</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                         <div>
+                            <h4 class="text-2xl font-semibold text-rojo-vibrante mb-6 flex items-center">
+                                <!-- Icono Auto -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 17l-2 2-2-2m4-4h6l2 4h-3l-2-4z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 17h-2a2 2 0 00-2-2H7a2 2 0 00-2 2H3a2 2 0 00-2 2v1h20v-1a2 2 0 00-2-2z" />
+                                </svg>
+                                Servicios para Autos
+                            </h4>
                             <ul class="space-y-4">
                                 <li class="flex items-start p-3 bg-gray-50 rounded-lg">
                                     <span class="text-rojo-vibrante mr-3">✓</span>
@@ -704,10 +768,6 @@
                                         <p class="text-sm text-gray-600">Optimización del rendimiento del motor.</p>
                                     </div>
                                 </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <ul class="space-y-4">
                                 <li class="flex items-start p-3 bg-gray-50 rounded-lg">
                                     <span class="text-rojo-vibrante mr-3">✓</span>
                                     <div>
@@ -755,12 +815,23 @@
                     <h3 class="text-3xl font-bold text-center text-gray-800 mb-10">Servicios Ofrecidos</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                         <div>
+                            <h4 class="text-2xl font-semibold text-rojo-vibrante mb-6 flex items-center">
+                                <!-- Icono Auto -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 17l-2 2-2-2m4-4h6l2 4h-3l-2-4z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 17h-2a2 2 0 00-2-2H7a2 2 0 00-2 2H3a2 2 0 00-2 2v1h20v-1a2 2 0 00-2-2z" />
+                                </svg>
+                                Servicios para Autos
+                            </h4>
                             <ul class="space-y-4">
                                 <li class="flex items-start p-3 bg-gray-50 rounded-lg">
                                     <span class="text-rojo-vibrante mr-3">✓</span>
                                     <div>
                                         <h5 class="font-semibold text-gray-800">Reparación General</h5>
-                                        <p class="text-sm text-gray-600">Servicio completo para autos y motos.</p>
+                                        <p class="text-sm text-gray-600">Servicio completo para autos.</p>
                                     </div>
                                 </li>
                                 <li class="flex items-start p-3 bg-gray-50 rounded-lg">
@@ -770,10 +841,6 @@
                                         <p class="text-sm text-gray-600">Mantenimiento y reparación de inyectores.</p>
                                     </div>
                                 </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <ul class="space-y-4">
                                 <li class="flex items-start p-3 bg-gray-50 rounded-lg">
                                     <span class="text-rojo-vibrante mr-3">✓</span>
                                     <div>
@@ -790,130 +857,29 @@
                                 </li>
                             </ul>
                         </div>
+                        <div>
+                            <h4 class="text-2xl font-semibold text-rojo-vibrante mb-6 flex items-center">
+                                <!-- Icono Moto -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                                </svg>
+                                Servicios para Motos
+                            </h4>
+                            <ul class="space-y-4">
+                                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                    <span class="text-rojo-vibrante mr-3">✓</span>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-800">Reparación General</h5>
+                                        <p class="text-sm text-gray-600">Servicio completo para motos.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <li class="flex items-start p-3 bg-gray-50 rounded-lg">
-            <span class="text-rojo-vibrante mr-3">✓</span>
-            <div>
-                <h5 class="font-semibold text-gray-800">Frenos y Suspensión</h5>
-                <p class="text-sm text-gray-600">Revisión y cambio de pastillas, discos y
-                    amortiguadores.</p>
-            </div>
-        </li>
-        <li class="flex items-start p-3 bg-gray-50 rounded-lg">
-            <span class="text-rojo-vibrante mr-3">✓</span>
-            <div>
-                <h5 class="font-semibold text-gray-800">Mecánica General</h5>
-                <p class="text-sm text-gray-600">Reparación de motor, caja y más.</p>
-            </div>
-        </li>
-        </ul>
-        </div>
-
-        <!-- Servicios para Motos -->
-        <div>
-            <h4 class="text-2xl font-semibold text-rojo-vibrante mb-6 flex items-center">
-                <!-- Icono Moto -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4">
-                    </path>
-                </svg>
-                Servicios para Motos
-            </h4>
-            <ul class="space-y-4">
-                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
-                    <span class="text-rojo-vibrante mr-3">✓</span>
-                    <div>
-                        <h5 class="font-semibold text-gray-800">Mantenimiento Preventivo</h5>
-                        <p class="text-sm text-gray-600">Cambio de aceite, bujía y filtro de aire.</p>
-                    </div>
-                </li>
-                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
-                    <span class="text-rojo-vibrante mr-3">✓</span>
-                    <div>
-                        <h5 class="font-semibold text-gray-800">Kit de Arrastre</h5>
-                        <p class="text-sm text-gray-600">Cambio de cadena, piñón y corona.</p>
-                    </div>
-                </li>
-                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
-                    <span class="text-rojo-vibrante mr-3">✓</span>
-                    <div>
-                        <h5 class="font-semibold text-gray-800">Diagnóstico Eléctrico</h5>
-                        <p class="text-sm text-gray-600">Reparación de luces, batería y sistema de
-                            arranque.</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-        </div>
-        </div>
-
-        <!-- Opiniones y Formulario de Reseña -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <!-- Lista de Opiniones -->
-            <div class="bg-white rounded-lg shadow-xl p-8">
-                <h3 class="text-2xl font-semibold text-gray-800 mb-6">Opiniones sobre este taller</h3>
-                <div class="space-y-5">
-                    <div class="border-b pb-4">
-                        <div class="flex items-center mb-2">
-                            <span class="font-semibold text-gray-900">Juan C.</span>
-                            <span class="text-yellow-400 text-xl ml-auto">★★★★☆</span>
-                        </div>
-                        <p class="text-gray-700 italic">"Excelente atención. Me solucionaron un problema
-                            eléctrico que en otros lados no pudieron."</p>
-                    </div>
-                    <div class="border-b pb-4">
-                        <div class="flex items-center mb-2">
-                            <span class="font-semibold text-gray-900">Carla M.</span>
-                            <span class="text-yellow-400 text-xl ml-auto">★★★★★</span>
-                        </div>
-                        <p class="text-gray-700 italic">"Llevé mi auto para cambio de aceite y fueron muy
-                            rápidos y profesionales. 100% recomendado."</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Dejar una Reseña -->
-            <div class="bg-white rounded-lg shadow-xl p-8">
-                <h3 class="text-2xl font-semibold text-gray-800 mb-6">Deja tu opinión</h3>
-                <form action="#" method="POST">
-                    <div class="mb-4">
-                        <label for="resena-nombre" class="block text-sm font-medium text-gray-700">Tu
-                            Nombre</label>
-                        <input type="text" id="resena-nombre" required
-                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-azul-principal focus:ring-azul-principal">
-                    </div>
-                    <div class="mb-4">
-                        <label for="resena-calificacion"
-                            class="block text-sm font-medium text-gray-700">Calificación</label>
-                        <select id="resena-calificacion" required
-                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-azul-principal focus:ring-azul-principal">
-                            <option value="5">★★★★★ (Excelente)</option>
-                            <option value="4">★★★★☆ (Bueno)</option>
-                            <option value="3">★★★☆☆ (Regular)</option>
-                            <option value="2">★★☆☆☆ (Malo)</option>
-                            <option value="1">★☆☆☆☆ (Pésimo)</option>
-                        </select>
-                    </div>
-                    <div class="mb-4">
-                        <label for="resena-texto" class="block text-sm font-medium text-gray-700">Tu
-                            Comentario</label>
-                        <textarea id="resena-texto" rows="4" required
-                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-azul-principal focus:ring-azul-principal"></textarea>
-                    </div>
-                    <button type="submit"
-                        class="w-full bg-rojo-vibrante text-white px-6 py-2 rounded-lg font-semibold shadow hover:bg-red-700 transition-colors">
-                        Enviar Opinión
-                    </button>
-                </form>
-            </div>
-        </div>
-        </div>
         </section>
 
         <!-- =========== PÁGINA: SERVICIOS GENERALES =========== -->
@@ -1183,7 +1149,7 @@
                         </div>
                     </div>
                     <div>
-                        <img src="https://placehold.co/600x500/1E3A8A/FFFFFF?text=Comarapa+y+su+Gente"
+                        <img src="https://www.laregion.bo/wp-content/uploads/2015/11/COMARAPA-696x451.jpg"
                             alt="[Imagen de Comarapa y su gente trabajadora]"
                             class="rounded-lg shadow-xl w-full h-full object-cover">
                     </div>
@@ -1266,76 +1232,76 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
-            // --- Lógica de Navegación SPA (Single Page Application) ---
-
             const navLinks = document.querySelectorAll('a[data-page]');
             const pages = document.querySelectorAll('main > section');
             const mobileMenu = document.getElementById('menu-mobile');
             const menuToggle = document.getElementById('menu-toggle');
 
-            // Función para mostrar la página seleccionada y ocultar las demás
-            function showPage(pageId) {
-                // Ocultar todas las páginas
+            function showPage(pageId, tallerId = null) {
                 pages.forEach(page => {
                     page.style.display = 'none';
                 });
 
-                // Mostrar la página solicitada
-                const activePage = document.getElementById(`page-${pageId}`);
-                if (activePage) {
-                    activePage.style.display = 'block';
+                document.querySelectorAll('.taller-detalle').forEach(detalle => {
+                    detalle.classList.add('hidden');
+                });
+
+                if (pageId === 'taller-detalle' && tallerId) {
+                    const activePage = document.getElementById('page-taller-detalle');
+                    if (activePage) {
+                        activePage.style.display = 'block';
+                        const detalleElement = document.getElementById(`detalle-${tallerId}`);
+                        if (detalleElement) {
+                            detalleElement.classList.remove('hidden');
+                        }
+                    }
                 } else {
-                    // Si no se encuentra, mostrar inicio
-                    document.getElementById('page-inicio').style.display = 'block';
+                    const activePage = document.getElementById(`page-${pageId}`);
+                    if (activePage) {
+                        activePage.style.display = 'block';
+                    } else {
+                        document.getElementById('page-inicio').style.display = 'block';
+                    }
                 }
 
-                // Actualizar el estado activo en los enlaces de navegación
                 updateActiveNavLinks(pageId);
 
-                // Ocultar el menú móvil después de hacer clic
                 if (mobileMenu) {
                     mobileMenu.classList.add('hidden');
                 }
 
-                // Volver al inicio de la página
                 window.scrollTo(0, 0);
             }
 
-            // Función para actualizar los enlaces activos
             function updateActiveNavLinks(activePageId) {
-                // Actualizar enlaces de escritorio
                 document.querySelectorAll('.nav-link').forEach(link => {
                     link.classList.remove('active');
                     if (link.dataset.page === activePageId) {
                         link.classList.add('active');
                     }
                 });
-                // (Opcional) Actualizar enlaces móviles si tuvieran una clase 'active'
             }
 
-            // Añadir listener a todos los enlaces de navegación
             navLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
-                    e.preventDefault(); // Prevenir el comportamiento por defecto del enlace
+                    e.preventDefault();
                     const pageId = link.dataset.page;
-                    showPage(pageId);
+                    const tallerId = link.dataset.taller;
+                    showPage(pageId, tallerId);
                 });
             });
 
-            // --- Lógica del Menú Móvil ---
             if (menuToggle && mobileMenu) {
                 menuToggle.addEventListener('click', () => {
                     mobileMenu.classList.toggle('hidden');
                 });
             }
 
-            // --- Lógica del Año Actual en el Footer ---
             const yearSpan = document.getElementById('current-year');
             if (yearSpan) {
                 yearSpan.textContent = new Date().getFullYear();
             }
 
-            // Mostrar la página de inicio por defecto
             showPage('inicio');
 
         });
